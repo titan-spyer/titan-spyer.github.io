@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- Parallax Depth Layers ---
+    // --- Parallax Depth Layers (Removed for stability) ---
+    /*
     document.addEventListener('mousemove', (e) => {
         const x = (window.innerWidth / 2 - e.clientX) / 50;
         const y = (window.innerHeight / 2 - e.clientY) / 50;
@@ -94,9 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if(heroText) heroText.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
         if(heroImg) heroImg.style.transform = `translate(${-x}px, ${-y}px)`;
     });
+    */
 
-    // --- Magnetic Buttons & Ripple Effect ---
+    // --- Ripple Effect ---
     document.querySelectorAll('.btn').forEach(btn => {
+        /* Magnetic removed for stability
         btn.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
@@ -107,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('mouseleave', function() {
             this.style.transform = `translate(0px, 0px)`;
         });
+        */
 
         btn.addEventListener('click', function(e) {
             let x = e.clientX - e.target.getBoundingClientRect().left;
@@ -274,6 +278,28 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+
+    // --- Mobile Menu Toggle ---
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
 
     // Optional: Enhanced Skill Tag Interactions
     document.querySelectorAll('.skill-tag').forEach(tag => {

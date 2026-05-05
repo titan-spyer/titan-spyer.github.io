@@ -1,3 +1,4 @@
+// The JavaScript starts from here. 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Loading Animation ---
     const loader = document.getElementById('loader');

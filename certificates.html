@@ -1,14 +1,19 @@
-<!-- This is the education.html file for Satyabrata Behera's personal website, detailing his educational background. The page includes a timeline of his studies at VSSUT and Government Polytechnic Bhadrak, along with descriptions of his academic focus and projects. The design is consistent with the rest of the site, featuring a dark theme and modern typography. -->
+<!-- This is the certificates.html file for Satyabrata Behera's personal portfolio, showcasing his verified professional accomplishments (CS50, Neo4j, GCP, and more). The page integrates search functionality, dynamic classification filters, glowing brand spotlights, and a high-fidelity modal details lightbox. The design maintains complete cohesion with the rest of the site's dark glassmorphic sci-fi aesthetic. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education - Satyabrata Behera</title>
-    <meta name="description" content="Education history of Satyabrata Behera, studying B.Tech at VSSUT.">
+    <title>Certificates - Satyabrata Behera</title>
+    <meta name="description" content="Professional certifications and verified accomplishments of Satyabrata Behera, including Harvard CS50, Neo4j Fundamentals, and Google Cloud Platform.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/certificates.css">
 </head>
 <body>
+    <div id="loader"><div class="spinner"></div></div>
+    <div id="cursor-glow"></div>
+    <div id="scroll-progress"></div>
+    <div class="crt-scanlines"></div>
     <canvas id="bg-canvas"></canvas>
     
     <nav>
@@ -22,47 +27,45 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="education.html">Education</a></li>
-            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="certificates.html" class="active">Certificates</a></li>
             <li><a href="hire_me.html" class="nav-hire-me">Hire Me</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <section>
-            <h2 class="section-title" style="margin-bottom: 3rem;">Education Journey</h2>
+            <h2 class="section-title" style="margin-bottom: 2.5rem;">Verified Credentials</h2>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2027</span>
-                        <h3>Veer Surendra Sai University of Technology (VSSUT)</h3>
-                        <h4>Odisha, India</h4>
-                        <p style="color: #fff; margin-bottom: 1rem; font-family: 'Fira Code', monospace; font-size: 0.95rem;">
-                            B.Tech in Electronics and Telecommunication
-                        </p>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            Developing a strong foundation in core engineering logic, while concurrently accelerating skills in Software Development, Data Structures, Artificial Intelligence, and machine learning pipelines. Building real-world projects and participating in competitive programming environments.
-                        </p>
-                    </div>
+            <!-- Controls: Search and Categories -->
+            <div class="controls-container">
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search by certificate name, issuer, or skill...">
+                    <svg class="search-icon" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
                 </div>
                 
-                <!-- Diploma -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2020 - 2023</span>
-                        <h3>Government Polytechnic Bhadrak</h3>
-                        <h4>Odisha, India</h4>
-                        <p style="color: #fff; margin-bottom: 1rem; font-family: 'Fira Code', monospace; font-size: 0.95rem;">
-                            Diploma in Electrical Engineering
-                        </p>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            Gained strong foundational knowledge in circuits, systems, and engineering design. Built hands-on technical skills with AutoCAD and MATLAB. Culminated studies by developing Streamranger—an ambitious IoT Remote Monitoring system integrating live-streaming and hardware logic.
-                        </p>
-                    </div>
-                </div>
+                <ul class="filter-tabs">
+                    <li><button class="filter-btn active" data-filter="all">All</button></li>
+                    <li><button class="filter-btn" data-filter="cs">Computer Science</button></li>
+                    <li><button class="filter-btn" data-filter="cloud">Cloud & DevOps</button></li>
+                    <li><button class="filter-btn" data-filter="database">Databases & Graph</button></li>
+                </ul>
+            </div>
+            
+            <!-- Certificates Grid Display -->
+            <div class="certs-grid" id="certs-grid">
+                <!-- Dynamically populated via assets/js/certificates.js -->
             </div>
         </section>
     </main>
+
+    <!-- Details Lightbox Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container" id="modal-container">
+            <!-- Dynamically populated via assets/js/certificates.js -->
+        </div>
+    </div>
 
     <footer>
         <div class="social-links">
@@ -79,6 +82,8 @@
         <p>&copy; 2026 Satyabrata Behera. Hosted on GitHub Pages.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/certificates.js"></script>
 </body>
 </html>

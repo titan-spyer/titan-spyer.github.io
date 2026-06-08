@@ -7,6 +7,8 @@
     --neo4j-glow: rgba(0, 140, 193, 0.5);
     --gcp-brand: #4285f4;
     --gcp-glow: rgba(66, 133, 244, 0.5);
+    --cognitive-brand: #0f62fe;
+    --cognitive-glow: rgba(15, 98, 254, 0.5);
     --default-glow: rgba(0, 240, 255, 0.3);
 }
 
@@ -195,6 +197,11 @@
     --accent-border-color: var(--gcp-brand);
 }
 
+.cert-card.brand-cognitive {
+    --accent-glow-color: var(--cognitive-glow);
+    --accent-border-color: var(--cognitive-brand);
+}
+
 .cert-card {
     --accent-glow-color: var(--default-glow);
     --accent-border-color: var(--accent-1);
@@ -210,6 +217,7 @@
 .brand-cs50 .cert-badge { background: var(--cs50-brand); }
 .brand-neo4j .cert-badge { background: var(--neo4j-brand); }
 .brand-gcp .cert-badge { background: var(--gcp-brand); }
+.brand-cognitive .cert-badge { background: var(--cognitive-brand); }
 
 /* Card Content details */
 .cert-details {
@@ -228,6 +236,7 @@
 .brand-cs50 .cert-issuer { color: #ff5577; }
 .brand-neo4j .cert-issuer { color: #55ccff; }
 .brand-gcp .cert-issuer { color: #ffdd66; }
+.brand-cognitive .cert-issuer { color: #6ea0ff; }
 
 .cert-card h3 {
     font-size: 1.25rem;

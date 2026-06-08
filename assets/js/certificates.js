@@ -5,30 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Easily extensible: Add new certificates to this list and they will immediately render.
     const certificates = [
         {
-            id: 'cs50',
-            title: 'CS50x: Introduction to Computer Science',
-            issuer: 'Harvard University (via edX)',
-            date: 'December 2024',
-            category: 'cs',
-            image: 'assets/images/cert_cs50.png',
-            description: 'Harvard University\'s flagship introduction to the intellectual enterprises of computer science and the art of programming. Mastered fundamental concepts including resource management, memory allocations, low-level pointers in C, dynamic programming, web systems, database design with SQL, and advanced algorithmic thinking.',
-            skills: ['C Programming', 'Python', 'SQL', 'Algorithms', 'Data Structures', 'Flask'],
-            verifyUrl: 'https://cs50.harvard.edu/certificates/6806b57a-825b-4eef-b9ad-d147a2687ff6', // Example URL
-            brandClass: 'brand-cs50',
-            badgeText: 'Computer Science'
-        },
-        {
             id: 'neo4j',
-            title: 'Neo4j Certified: Graph Database Fundamentals',
+            title: 'Neo4j Certified Professional',
             issuer: 'Neo4j GraphAcademy',
-            date: 'February 2025',
+            date: 'June 2026',
             category: 'database',
             image: 'assets/images/cert_neo4j.png',
             description: 'Acquired core competencies in graph data modeling, node-relationship traversal, and complex Cypher query optimization. Validated understanding of relational-to-graph transitions, performance indexing, and traversing highly interconnected datasets in millisecond runtimes.',
             skills: ['Neo4j', 'Graph Databases', 'Cypher Query Language', 'Data Modeling', 'NoSQL'],
-            verifyUrl: 'https://graphacademy.neo4j.com/c/77344973-d149-4f91-8206-54a599e9c140/', // Example URL
+            verifyUrl: 'https://graphacademy.neo4j.com/c/11c24862-7743-4ef7-a66d-fa67519e6f16/',
             brandClass: 'brand-neo4j',
             badgeText: 'Database'
+        },
+        {
+            id: 'cognitive-ml',
+            title: 'Machine Learning Basics',
+            issuer: 'Cognitive Class',
+            date: 'June 2026',
+            category: 'cs',
+            image: 'assets/images/machine_learning_basics.png',
+            description: 'Acquired foundational knowledge of machine learning algorithms, supervised vs. unsupervised learning models, regression analysis, classification, and clustering techniques. Practiced implementing models using Python and data science libraries to analyze real-world datasets.',
+            skills: ['Machine Learning', 'Python', 'Supervised Learning', 'Algorithms', 'Data Analysis'],
+            verifyUrl: 'https://cognitiveclass.ai/certificates/6bf02bbf-788e-40ae-adfe-348aef578e34',
+            brandClass: 'brand-cognitive',
+            badgeText: 'Machine Learning'
         },
         {
             id: 'gcp',
@@ -43,6 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
             brandClass: 'brand-gcp',
             badgeText: 'Cloud',
             status: 'on-hold'
+        },
+        {
+            id: 'cs50',
+            title: 'CS50x: Introduction to Computer Science',
+            issuer: 'Harvard University (via edX)',
+            date: 'December 2024',
+            category: 'cs',
+            image: 'assets/images/cert_cs50.png',
+            description: 'Harvard University\'s flagship introduction to the intellectual enterprises of computer science and the art of programming. Mastered fundamental concepts including resource management, memory allocations, low-level pointers in C, dynamic programming, web systems, database design with SQL, and advanced algorithmic thinking.',
+            skills: ['C Programming', 'Python', 'SQL', 'Algorithms', 'Data Structures', 'Flask'],
+            verifyUrl: 'https://certificates.cs50.io/6806b57a-825b-4eef-b9ad-d147a2687ff6.pdf',
+            brandClass: 'brand-cs50',
+            badgeText: 'Computer Science'
         }
     ];
 

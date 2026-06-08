@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Easily extensible: Add new certificates to this list and they will immediately render.
     const certificates = [
         {
+            id: 'neo4j-gds',
+            title: 'Neo4j Graph Data Science Certification',
+            issuer: 'Neo4j GraphAcademy',
+            date: 'June 2026',
+            category: 'database',
+            image: 'assets/images/cert_neo4j_gds.png',
+            description: 'Acquired professional certification in applying graph algorithms, machine learning models, and predictive analytics using the Neo4j Graph Data Science (GDS) library. Validated capabilities in node embeddings, pathfinding, link prediction, and constructing robust GraphRAG pipelines.',
+            skills: ['Neo4j GDS', 'Graph Algorithms', 'Machine Learning', 'GraphRAG', 'Link Prediction'],
+            verifyUrl: 'https://graphacademy.neo4j.com/c/474f59b7-c0e0-4b5a-b836-71b4e128d024/',
+            brandClass: 'brand-neo4j',
+            badgeText: 'Graph Data Science'
+        },
+        {
             id: 'neo4j',
             title: 'Neo4j Certified Professional',
             issuer: 'Neo4j GraphAcademy',

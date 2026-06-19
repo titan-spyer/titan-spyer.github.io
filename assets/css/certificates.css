@@ -9,6 +9,8 @@
     --gcp-glow: rgba(66, 133, 244, 0.5);
     --cognitive-brand: #0f62fe;
     --cognitive-glow: rgba(15, 98, 254, 0.5);
+    --hackerrank-brand: #2ec866;
+    --hackerrank-glow: rgba(46, 200, 102, 0.5);
     --default-glow: rgba(0, 240, 255, 0.3);
 }
 
@@ -202,6 +204,11 @@
     --accent-border-color: var(--cognitive-brand);
 }
 
+.cert-card.brand-hackerrank {
+    --accent-glow-color: var(--hackerrank-glow);
+    --accent-border-color: var(--hackerrank-brand);
+}
+
 .cert-card {
     --accent-glow-color: var(--default-glow);
     --accent-border-color: var(--accent-1);
@@ -218,6 +225,7 @@
 .brand-neo4j .cert-badge { background: var(--neo4j-brand); }
 .brand-gcp .cert-badge { background: var(--gcp-brand); }
 .brand-cognitive .cert-badge { background: var(--cognitive-brand); }
+.brand-hackerrank .cert-badge { background: var(--hackerrank-brand); }
 
 /* Card Content details */
 .cert-details {
@@ -237,6 +245,7 @@
 .brand-neo4j .cert-issuer { color: #55ccff; }
 .brand-gcp .cert-issuer { color: #ffdd66; }
 .brand-cognitive .cert-issuer { color: #6ea0ff; }
+.brand-hackerrank .cert-issuer { color: #2ec866; }
 
 .cert-card h3 {
     font-size: 1.25rem;
@@ -468,11 +477,17 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    width: 100%;
 }
 
-.modal-verify-btn {
-    width: 100%;
+.modal-actions .btn {
+    flex: 1;
+    min-width: 160px;
     justify-content: center;
+}
+
+.modal-actions .modal-verify-btn {
+    width: auto;
 }
 
 /* Empty search states styling */

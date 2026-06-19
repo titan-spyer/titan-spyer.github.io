@@ -5,6 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Easily extensible: Add new certificates to this list and they will immediately render.
     const certificates = [
         {
+            id: 'hackerrank-se',
+            title: 'Software Engineer Certificate',
+            issuer: 'HackerRank',
+            date: 'June 2026',
+            category: 'cs',
+            image: 'assets/images/cert_hackerrank_se.png',
+            description: 'Acquired professional certification validating software engineering skills, including problem-solving, algorithms, data structures, and software architecture practices. Confirmed backend and problem-solving excellence through HackerRank standardized testing.',
+            skills: ['Software Engineering', 'Algorithms', 'Data Structures', 'Problem Solving'],
+            verifyUrl: 'https://www.hackerrank.com/certificates/iframe/541d7114d189',
+            pdfUrl: 'assets/images/software_engineer_certificate.pdf',
+            brandClass: 'brand-hackerrank',
+            badgeText: 'Software Engineering'
+        },
+        {
             id: 'neo4j-gds',
             title: 'Neo4j Graph Data Science Certification',
             issuer: 'Neo4j GraphAcademy',
@@ -189,23 +203,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const skillsHtml = cert.skills.map(s => `<span>${s}</span>`).join('');
 
-        const actionButton = cert.status === 'on-hold'
-            ? `
-                <button class="btn modal-verify-btn" style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--glass-border); color: var(--text-muted); cursor: not-allowed; width: 100%; justify-content: center;" disabled>
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
-                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-                    </svg>
-                    Certificate On Hold (Pending Upload)
-                </button>
-            `
-            : `
-                <a href="${cert.verifyUrl}" target="_blank" class="btn btn-primary modal-verify-btn">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                    </svg>
-                    Verify Official Credential
-                </a>
+        let actionsHtml = '';
+        if (cert.status === 'on-hold') {
+            actionsHtml = `
+                <div class="modal-actions">
+                    <button class="btn modal-verify-btn" style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--glass-border); color: var(--text-muted); cursor: not-allowed; width: 100%; justify-content: center;" disabled>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                        Certificate On Hold (Pending Upload)
+                    </button>
+                </div>
             `;
+        } else {
+            actionsHtml = `
+                <div class="modal-actions">
+                    <a href="${cert.verifyUrl}" target="_blank" class="btn btn-primary modal-verify-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                        Verify Credential
+                    </a>
+            `;
+
+            if (cert.pdfUrl) {
+                actionsHtml += `
+                    <a href="${cert.pdfUrl}" target="_blank" class="btn modal-pdf-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        View PDF
+                    </a>
+                `;
+            }
+
+            actionsHtml += `</div>`;
+        }
 
         modalContainer.innerHTML = `
             <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
@@ -236,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="modal-skills-list">
                             ${skillsHtml}
                         </div>
-                        ${actionButton}
+                        ${actionsHtml}
                     </div>
                 </div>
             </div>

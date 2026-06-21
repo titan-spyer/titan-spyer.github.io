@@ -1,0 +1,381 @@
+<!-- This is the experience.html file for Satyabrata Behera's personal portfolio, showcasing his professional internship experiences, key projects built during them, and associated certifications. The layout is designed to maintain absolute consistency with the dark glassmorphic sci-fi aesthetic, complete with dynamic background canvas, custom cursor glow, scanlines, and entrance animations. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Satyabrata Behera (titan-spyer)</title>
+    <meta name="description"
+        content="Professional experience and internships of Satyabrata Behera (titan-spyer), including his role as a Generative AI Intern at Prodigy InfoTech, and key machine learning projects.">
+    <meta name="keywords"
+        content="Satyabrata Behera, titan-spyer, titan spyer, Satyabrata Behera experience, Prodigy InfoTech, Generative AI internship, GPT-2 fine-tuning, ML engineer experience">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://titan-spyer.github.io/experience.html">
+    <meta property="og:title" content="Experience | Satyabrata Behera (titan-spyer)">
+    <meta property="og:description"
+        content="Professional experience and internships of Satyabrata Behera (titan-spyer), including his role as a Generative AI Intern at Prodigy InfoTech, and key machine learning projects.">
+    <meta property="og:image" content="https://titan-spyer.github.io/assets/images/profile.JPG">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://titan-spyer.github.io/experience.html">
+    <meta property="twitter:title" content="Experience | Satyabrata Behera (titan-spyer)">
+    <meta property="twitter:description"
+        content="Professional experience and internships of Satyabrata Behera (titan-spyer), including his role as a Generative AI Intern at Prodigy InfoTech, and key machine learning projects.">
+    <meta property="twitter:image" content="https://titan-spyer.github.io/assets/images/profile.JPG">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .exp-card {
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid var(--accent-1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .exp-card:hover {
+            border-left-color: var(--accent-2);
+            box-shadow: 0 12px 40px rgba(0, 240, 255, 0.15);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+        }
+
+        .exp-title-block h3 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .exp-company {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-1);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .exp-meta {
+            text-align: right;
+        }
+
+        .exp-date {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-location {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        .exp-body {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 900px) {
+            .exp-body {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .exp-description h4,
+        .exp-project-showcase h4 {
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .exp-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .exp-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .exp-description li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+            font-weight: bold;
+        }
+
+        .exp-project-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .exp-project-card:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(0, 240, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .exp-project-card h5 {
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-project-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+
+        .exp-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-skills span {
+            background: rgba(112, 0, 255, 0.08);
+            border: 1px solid rgba(112, 0, 255, 0.2);
+            color: #b983ff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .exp-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .exp-links .btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .exp-meta {
+                text-align: left;
+            }
+        }
+    </style>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Satyabrata Behera",
+      "url": "https://titan-spyer.github.io/",
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Prodigy InfoTech Generative AI Internship Certificate",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Prodigy InfoTech"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <div id="cursor-glow"></div>
+    <div id="scroll-progress"></div>
+    <div class="crt-scanlines"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <a href="index.html" class="nav-logo">titan-spyer</a>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="experience.html" class="active">Experience</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="hire_me.html" class="nav-hire-me">Hire Me</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section>
+            <h2 class="section-title" style="margin-bottom: 3rem;">Internship Experience</h2>
+
+            <div class="experience-grid">
+                <!-- Prodigy InfoTech Internship Card -->
+                <div class="glass-card exp-card">
+                    <div class="exp-header">
+                        <div class="exp-title-block">
+                            <h3>Generative AI Intern</h3>
+                            <span class="exp-company">Prodigy InfoTech</span>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-date">May 2026 - June 2026</span>
+                            <span class="exp-location">Remote / Internship</span>
+                        </div>
+                    </div>
+
+                    <div class="exp-body">
+                        <!-- Left Details Column -->
+                        <div class="exp-description">
+                            <h4>Scope & Responsibilities</h4>
+                            <ul>
+                                <li>Explored core Transformer models, language modeling objectives, and generative text
+                                    architectures.</li>
+                                <li>Prepared custom textual datasets, engineered tokenization pipelines, and managed
+                                    tensor format dimensions.</li>
+                                <li>Fine-tuned pre-trained model weights (GPT-2) locally using Hugging Face
+                                    Transformers, tracking training loss and convergence metrics.</li>
+                                <li>Evaluated model checkpoints using prompt completion inference to assess coherence
+                                    and contextual similarity to training distributions.</li>
+                                <li>Documented optimization parameters, learning rate schedules, and temperature
+                                    parameters for downstream text generation.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Project Showcase Column -->
+                        <div class="exp-project-showcase">
+                            <h4>Featured Work & Credential</h4>
+                            <div class="exp-project-card">
+                                <div>
+                                    <h5>GPT-2 Custom Fine-Tuning Engine</h5>
+                                    <p>Trained and optimized a GPT-2 model to generate contextually relevant text
+                                        matching the style and structure of custom training corpora. Built robust
+                                        evaluation pipelines for model output validation.</p>
+                                    <div class="exp-skills">
+                                        <span>GPT-2</span>
+                                        <span>Transformers</span>
+                                        <span>PyTorch</span>
+                                        <span>Hugging Face</span>
+                                        <span>Python</span>
+                                    </div>
+                                </div>
+                                <div class="exp-links">
+                                    <a href="https://github.com/titan-spyer/PRODIGY_GA_01.git" target="_blank"
+                                        class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                                            style="vertical-align: middle; margin-right: 4px;">
+                                            <path
+                                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                        </svg>
+                                        Repository
+                                    </a>
+                                    <a href="assets/images/Prodigy_internship.pdf" target="_blank" class="btn">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                            stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        </svg>
+                                        Certificate PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                        style="margin-right: 8px; vertical-align: middle;">
+                        <path
+                            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    </svg>
+                    Resume
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/titan-spyer" target="_blank" title="GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/satya-brata-behera" target="_blank" title="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+            <a href="mailto:mr.satya02@gmail.com" title="Email">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                </svg>
+            </a>
+        </div>
+        <p>&copy; 2026 Satyabrata Behera. Hosted on GitHub Pages.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

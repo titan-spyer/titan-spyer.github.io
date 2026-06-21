@@ -5,6 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Easily extensible: Add new certificates to this list and they will immediately render.
     const certificates = [
         {
+            id: 'prodigy-internship',
+            title: 'Generative AI Internship Certificate',
+            issuer: 'Prodigy InfoTech',
+            date: 'June 2026',
+            category: 'cs',
+            image: 'assets/images/Prodigy_internship.png',
+            description: 'Completed a Generative AI internship at Prodigy InfoTech. Trained a model to generate coherent and contextually relevant text based on a given prompt by fine-tuning GPT-2 on a custom dataset, mimicking the style and structure of the training data.',
+            skills: ['Generative AI', 'GPT-2', 'Transformers', 'Fine-Tuning', 'Python'],
+            verifyUrl: 'assets/images/Prodigy_internship.pdf',
+            pdfUrl: 'assets/images/Prodigy_internship.pdf',
+            brandClass: 'brand-prodigy',
+            badgeText: 'Internship'
+        },
+        {
             id: 'hackerrank-se',
             title: 'Software Engineer Certificate',
             issuer: 'HackerRank',

@@ -11,6 +11,8 @@
     --cognitive-glow: rgba(15, 98, 254, 0.5);
     --hackerrank-brand: #2ec866;
     --hackerrank-glow: rgba(46, 200, 102, 0.5);
+    --prodigy-brand: #3b82f6;
+    --prodigy-glow: rgba(59, 130, 246, 0.5);
     --default-glow: rgba(0, 240, 255, 0.3);
 }
 
@@ -209,6 +211,11 @@
     --accent-border-color: var(--hackerrank-brand);
 }
 
+.cert-card.brand-prodigy {
+    --accent-glow-color: var(--prodigy-glow);
+    --accent-border-color: var(--prodigy-brand);
+}
+
 .cert-card {
     --accent-glow-color: var(--default-glow);
     --accent-border-color: var(--accent-1);
@@ -226,6 +233,7 @@
 .brand-gcp .cert-badge { background: var(--gcp-brand); }
 .brand-cognitive .cert-badge { background: var(--cognitive-brand); }
 .brand-hackerrank .cert-badge { background: var(--hackerrank-brand); }
+.brand-prodigy .cert-badge { background: var(--prodigy-brand); }
 
 /* Card Content details */
 .cert-details {
@@ -246,6 +254,7 @@
 .brand-gcp .cert-issuer { color: #ffdd66; }
 .brand-cognitive .cert-issuer { color: #6ea0ff; }
 .brand-hackerrank .cert-issuer { color: #2ec866; }
+.brand-prodigy .cert-issuer { color: #3b82f6; }
 
 .cert-card h3 {
     font-size: 1.25rem;
